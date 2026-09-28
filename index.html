@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>État des lieux à Enghien-les-Bains et Montmorency | Pour propriétaires et agences</title>
+<meta name="description" content="Agent d'état des lieux indépendant à Enghien-les-Bains, Montmorency et alentours, pour propriétaires bailleurs et agences de gestion : entrée, sortie, rapport photo signé sur tablette.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"[NOM DE VOTRE ACTIVITÉ]","description":"États des lieux locatifs pour bailleurs et agences de gestion","areaServed":["Enghien-les-Bains","Montmorency","Soisy-sous-Montmorency","Deuil-la-Barre","Saint-Gratien","Eaubonne"],"telephone":"[01 23 45 67 89]","email":"contact@exemple.fr"}
+</script>
+<style>
+:root{
+  --bg:#f6f4f0; --rose:#C89F97; --rose-deep:#B28282; --greige:#BEAC9C;
+  --ink:#3d2f2b; --ink-soft:#66554f; --line:#e3dbd2; --white:#fffdfa;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose-deep);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,5.4vw,3.4rem)}
+h2{font-size:clamp(1.6rem,3.6vw,2.2rem)}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1em;max-width:68ch}
+.lead{font-size:1.15rem;color:var(--ink-soft)}
+
+/* Affichage selon le profil */
+body[data-profil="particulier"] [data-for="agence"],
+body[data-profil="agence"] [data-for="particulier"]{display:none!important}
+body[data-profil="particulier"] .ht{display:none}
+body[data-profil="agence"] .ttc{display:none}
+
+header{position:sticky;top:0;z-index:10;background:rgba(246,244,240,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1040px;margin:0 auto}
+.brand{font-weight:800;text-decoration:none}
+nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600;font-size:.95rem}
+nav a:hover{text-decoration:underline}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:13px 24px;border-radius:999px;text-decoration:none;border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{background:#2b201d}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.alt:hover{background:var(--white)}
+.btn.small{padding:8px 18px;font-size:.92rem;color:var(--bg)}
+
+/* Choix du profil */
+.switch{display:inline-flex;background:var(--white);border:2px solid var(--ink);border-radius:999px;padding:4px;margin-bottom:26px;gap:4px;flex-wrap:wrap}
+.switch button{font:inherit;font-weight:700;border:0;background:transparent;color:var(--ink);padding:10px 20px;border-radius:999px;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+.hero{padding:56px 0 72px}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.sheet{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:22px 24px;box-shadow:8px 8px 0 var(--greige);transform:rotate(1.2deg)}
+.sheet h3{font-size:1rem;margin-bottom:10px;border-bottom:2px solid var(--rose);padding-bottom:8px}
+.sheet ul{list-style:none;margin:0;padding:0}
+.sheet li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.sheet li span:last-child{color:var(--ink-soft);font-weight:600}
+.sheet .sig{margin:14px 0 0;font-size:.85rem;color:var(--ink-soft)}
+
+.tint{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.card{padding:6px 0 6px 18px;border-left:4px solid var(--rose)}
+.card p{margin:0;color:var(--ink-soft)}
+
+.steps{counter-reset:s;list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--rose);color:var(--ink);font-weight:800;margin-bottom:10px}
+.steps p{color:var(--ink-soft);font-size:.96rem;margin:0}
+
+.tablewrap{overflow-x:auto;margin-top:26px;border:1px solid var(--line);border-radius:10px;background:var(--white)}
+table{border-collapse:collapse;width:100%;min-width:520px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--greige);font-weight:800}
+td.price{font-weight:800;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td small{display:block;color:var(--ink-soft);font-weight:400}
+.extras{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 32px;margin:22px 0 0;padding:0;list-style:none}
+.extras li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--greige);padding:8px 0}
+.note{font-size:.9rem;color:var(--ink-soft);margin-top:16px}
+
+.eng{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 40px;margin-top:26px}
+.eng h3{margin-bottom:.2em}
+.eng p{margin:0;color:var(--ink-soft)}
+
+.zone{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;padding:0;list-style:none}
+.zone li{padding:8px 16px;border-radius:999px;background:var(--white);border:1px solid var(--greige);font-weight:600}
+.zone li.main{background:var(--rose);border-color:var(--rose);font-weight:800}
+
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--rose-deep)}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--ink-soft)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:start}
+.coords p{margin-bottom:.6em}
+form{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:26px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-weight:700;font-size:.92rem;margin-bottom:5px}
+input,select,textarea{width:100%;font:inherit;padding:11px 13px;border:1.5px solid var(--greige);border-radius:8px;background:var(--bg);color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+.field{margin-bottom:14px}
+.hint{font-size:.85rem;color:var(--ink-soft);margin:10px 0 0}
+#confirm{display:none;margin-top:14px;padding:12px 14px;border-radius:8px;background:#efe4e0;font-size:.95rem}
+
+footer{padding:36px 0;font-size:.88rem;color:var(--ink-soft);border-top:1px solid var(--line)}
+footer p{max-width:none;margin:0 0 .4em}
+
+@media (max-width:820px){
+  section{padding:52px 0}
+  .hero-grid,.contact-grid{grid-template-columns:1fr;gap:34px}
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .eng,.extras,.row{grid-template-columns:1fr}
+  .sheet{transform:none}
+  nav a:not(.btn){display:none}
+}
+</style>
+</head>
+<body data-profil="particulier">
+
+<header>
+  <div class="bar">
+    <a class="brand" href="#top">[NOM DE VOTRE ACTIVITÉ]</a>
+    <nav aria-label="Navigation principale">
+      <a href="#prestations">Prestations</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#zone">Zone</a>
+      <a href="#faq">Questions</a>
+      <a class="btn small" href="#contact">Demander un devis</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="switch" role="group" aria-label="Choisissez votre profil">
+        <button type="button" data-set="particulier" aria-pressed="true">Je suis propriétaire</button>
+        <button type="button" data-set="agence" aria-pressed="false">Je suis une agence</button>
+      </div>
+
+      <div data-for="particulier">
+        <h1>Vous louez votre bien ? Je fais l'état des lieux à votre place.</h1>
+        <p class="lead">Je vous représente sur place à Enghien-les-Bains et Montmorency : je constate, je photographie, je signe en votre nom. Le rapport vous est envoyé automatiquement dès la signature.</p>
+      </div>
+      <div data-for="agence">
+        <h1>Externalisez vos états des lieux sur Enghien-les-Bains et Montmorency.</h1>
+        <p class="lead">Un agent indépendant qui représente votre agence sur place, signe pour votre compte et transmet le rapport dès la signature. Vos équipes gardent leur temps pour la gestion et la relation propriétaires.</p>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn" href="#contact">Demander un devis gratuit</a>
+        <a class="btn alt" href="#tarifs">Voir les tarifs</a>
+      </div>
+    </div>
+    <aside class="sheet" aria-label="Exemple de rapport">
+      <h3>Extrait de rapport : séjour</h3>
+      <ul>
+        <li><span>Murs</span><span>Bon état</span></li>
+        <li><span>Sol (parquet)</span><span>Rayures légères</span></li>
+        <li><span>Fenêtres</span><span>Bon état</span></li>
+        <li><span>Prises et interrupteurs</span><span>Conformes</span></li>
+        <li><span>Radiateur</span><span>Fonctionne</span></li>
+      </ul>
+      <p class="sig">Chaque ligne est illustrée par des photos datées.</p>
+    </aside>
+  </div>
+</section>
+
+<section id="prestations" class="tint">
+  <div class="wrap">
+    <h2>Trois prestations, un même niveau de détail</h2>
+    <p class="lead">L'état des lieux est le document qui tranche en cas de désaccord sur le dépôt de garantie. Il doit être complet, daté et signé.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>État des lieux d'entrée</h3>
+        <p>Pièce par pièce : murs, sols, menuiseries, équipements, compteurs et clés. Une base de référence claire pour toute la durée du bail.</p>
+      </div>
+      <div class="card">
+        <h3>État des lieux de sortie</h3>
+        <p>Comparaison point par point avec le document d'entrée, distinction entre usure normale et dégradations, pour un dépôt de garantie justifié.</p>
+      </div>
+      <div class="card">
+        <h3>Inventaire de meublé</h3>
+        <p>Liste détaillée du mobilier et de l'électroménager, avec photos, pour les locations meublées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Comment ça se passe</h2>
+    <ol class="steps" data-for="particulier">
+      <li><h3>Vous me contactez</h3><p>Formulaire ou téléphone : type de bien, nombre de pièces, date du rendez-vous avec le locataire.</p></li>
+      <li><h3>Devis immédiat</h3><p>Le prix suit la grille ci-dessous, sans surprise le jour J.</p></li>
+      <li><h3>Je vous représente</h3><p>Je réalise l'état des lieux avec le locataire, sur tablette, et je signe en votre nom.</p></li>
+      <li><h3>Rapport automatique</h3><p>À la signature, le rapport complet avec photos vous est envoyé directement.</p></li>
+    </ol>
+    <ol class="steps" data-for="agence">
+      <li><h3>Vous m'indiquez le besoin</h3><p>Adresse, nombre de pièces, date et coordonnées du locataire, par formulaire ou e-mail.</p></li>
+      <li><h3>Je confirme le créneau</h3><p>Rendez-vous fixé avec le locataire, ou selon vos consignes.</p></li>
+      <li><h3>Je vous représente</h3><p>Je réalise l'état des lieux et je signe au nom de l'agence, conformément à votre mandat.</p></li>
+      <li><h3>Rapport transmis</h3><p>À la signature, le rapport est envoyé automatiquement pour intégration à votre dossier.</p></li>
+    </ol>
+    <p class="note">Le rapport est établi avec l'application Nockee : photos horodatées, signature sur tablette, envoi automatique.</p>
+  </div>
+</section>
+
+<section id="tarifs" class="tint">
+  <div class="wrap">
+    <h2>Grille tarifaire</h2>
+    <p class="lead">
+      <span data-for="particulier">Prix TTC par état des lieux, entrée ou sortie, déplacement inclus dans la zone d'intervention.</span>
+      <span data-for="agence">Prix HT par état des lieux, entrée ou sortie, déplacement inclus dans la zone d'intervention.</span>
+    </p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Nombre de pièces</th><th scope="col">Entrée ou sortie</th><th scope="col">Entrée + sortie</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 pièce <small>Studio, T1</small></td>
+            <td class="price"><span class="ttc">90 €</span><span class="ht">75 €</span></td>
+            <td class="price"><span class="ttc">156 €</span><span class="ht">130 €</span></td></tr>
+          <tr><td>2 pièces <small>T2</small></td>
+            <td class="price"><span class="ttc">108 €</span><span class="ht">90 €</span></td>
+            <td class="price"><span class="ttc">192 €</span><span class="ht">160 €</span></td></tr>
+          <tr><td>3 pièces <small>T3</small></td>
+            <td class="price"><span class="ttc">132 €</span><span class="ht">110 €</span></td>
+            <td class="price"><span class="ttc">240 €</span><span class="ht">200 €</span></td></tr>
+          <tr><td>4 pièces <small>T4</small></td>
+            <td class="price"><span class="ttc">156 €</span><span class="ht">130 €</span></td>
+            <td class="price"><span class="ttc">282 €</span><span class="ht">235 €</span></td></tr>
+          <tr><td>5 pièces <small>T5</small></td>
+            <td class="price"><span class="ttc">180 €</span><span class="ht">150 €</span></td>
+            <td class="price"><span class="ttc">324 €</span><span class="ht">270 €</span></td></tr>
+          <tr><td>6 pièces et plus <small>T6 et +</small></td>
+            <td class="price">Sur devis</td><td class="price">Sur devis</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="extras">
+      <li><span>Maison (supplément)</span><strong><span class="ttc">+ 30 €</span><span class="ht">+ 25 €</span></strong></li>
+      <li><span>Inventaire de meublé</span><strong><span class="ttc">+ 24 €</span><span class="ht">+ 20 €</span></strong></li>
+      <li><span>Cave, garage ou box</span><strong><span class="ttc">+ 12 €</span><span class="ht">+ 10 €</span></strong></li>
+      <li><span>Déplacement hors zone</span><strong>Sur devis</strong></li>
+    </ul>
+    <p class="note" data-for="agence">Vous avez un flux régulier de biens ? Parlons-en : les conditions se définissent sur devis.</p>
+    <p class="note">Une pièce = une pièce de vie ou une chambre ; cuisine, salle de bains, WC et dépendances sont inclus dans le prix. Ma prestation est facturée au bailleur ou à l'agence mandante, jamais au locataire. Prix <span data-for="particulier">TTC (TVA 20 %)</span><span data-for="agence">HT, TVA 20 % en sus</span>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Mes engagements</h2>
+    <div class="eng">
+      <div><h3>Un constat factuel</h3><p>Je décris ce que je vois, sans interprétation. Le locataire est présent, ses remarques sont consignées avant signature.</p></div>
+      <div><h3>Des photos datées et légendées</h3><p>Chaque anomalie est photographiée et localisée. En cas de litige, le rapport parle de lui-même.</p></div>
+      <div><h3>Un rapport dès la signature</h3><p>Le document est envoyé automatiquement au bailleur ou à l'agence au moment où il est signé.</p></div>
+      <div><h3>Une organisation souple</h3><p>Je m'adapte aux agendas des locataires, en semaine comme en fin de journée, sans supplément.</p></div>
+    </div>
+    <!--
+      AVIS CLIENTS : à ajouter uniquement avec de vrais retours (Google, e-mail, SMS avec accord écrit du client).
+      Une fois les premiers avis recueillis, insérer ici une section « Ils m'ont fait confiance ».
+    -->
+  </div>
+</section>
+
+<section id="zone" class="tint">
+  <div class="wrap">
+    <h2>Zone d'intervention</h2>
+    <p class="lead">Enghien-les-Bains et Montmorency, ainsi que les communes voisines de la vallée.</p>
+    <ul class="zone">
+      <li class="main">Enghien-les-Bains</li>
+      <li class="main">Montmorency</li>
+      <li>Soisy-sous-Montmorency</li>
+      <li>Deuil-la-Barre</li>
+      <li>Saint-Gratien</li>
+      <li>Eaubonne</li>
+      <li>Andilly</li>
+      <li>Margency</li>
+      <li>Groslay</li>
+      <li>Saint-Prix</li>
+    </ul>
+    <p class="note">Une autre commune ? Écrivez-moi, je vous confirme la faisabilité et le tarif.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions fréquentes</h2>
+    <details>
+      <summary>Pourquoi déléguer l'état des lieux ?</summary>
+      <p data-for="particulier">Vous n'avez pas à vous déplacer ni à improviser un constat : un professionnel le réalise à votre place, avec un rapport complet qui protège votre dépôt de garantie.</p>
+      <p data-for="agence">Vos gestionnaires se libèrent des créneaux d'états des lieux, souvent concentrés en fin de journée ou le samedi, tout en gardant un rapport homogène pour tous vos dossiers.</p>
+    </details>
+    <details>
+      <summary>Vous signez à ma place ?</summary>
+      <p><span data-for="particulier">Oui. Je vous représente lors du rendez-vous et je signe en votre nom.</span><span data-for="agence">Oui. J'interviens en représentant de l'agence et je signe en son nom, dans le cadre du mandat qui m'est confié.</span> Le rapport est envoyé automatiquement à la signature.</p>
+    </details>
+    <details>
+      <summary>Qui vous règle ?</summary>
+      <p><span data-for="particulier">Vous, en tant que bailleur.</span><span data-for="agence">L'agence mandante.</span> Ma prestation n'est jamais facturée au locataire.</p>
+    </details>
+    <details>
+      <summary>Combien de temps dure le rendez-vous ?</summary>
+      <p>Entre 45 minutes et 1 h 30 selon le nombre de pièces et l'état du logement.</p>
+    </details>
+    <details>
+      <summary>Que se passe-t-il si le locataire conteste un constat ?</summary>
+      <p>Ses remarques sont consignées dans le rapport avant signature. Les photos datées servent alors de référence objective.</p>
+    </details>
+    <details>
+      <summary>Puis-je annuler ou reporter ?</summary>
+      <p>Oui, sans frais jusqu'à 24 h avant le rendez-vous.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contact" class="tint">
+  <div class="wrap contact-grid">
+    <div class="coords">
+      <h2>Demandez votre devis</h2>
+      <p class="lead">Décrivez le bien, je vous réponds sous 24 h ouvrées avec un tarif et un créneau.</p>
+      <p><strong>Téléphone</strong><br><a href="tel:+33123456789">[01 23 45 67 89]</a></p>
+      <p><strong>E-mail</strong><br><a href="mailto:contact@exemple.fr">contact@exemple.fr</a></p>
+      <p><strong>Horaires</strong><br>Du lundi au samedi, sur rendez-vous.</p>
+    </div>
+
+    <form id="devis" novalidate>
+      <div class="field" data-for="agence"><label for="agence">Nom de l'agence</label><input id="agence" name="agence" autocomplete="organization"></div>
+      <div class="row">
+        <div class="field"><label for="nom">Nom et prénom</label><input id="nom" name="nom" autocomplete="name"></div>
+        <div class="field"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="email">Votre e-mail</label><input id="email" name="email" type="email" autocomplete="email"></div>
+      <div class="row">
+        <div class="field">
+          <label for="presta">Prestation</label>
+          <select id="presta" name="presta">
+            <option>État des lieux d'entrée</option>
+            <option>État des lieux de sortie</option>
+            <option>Entrée + sortie</option>
+            <option>Inventaire de meublé</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pieces">Nombre de pièces</label>
+          <select id="pieces" name="pieces">
+            <option>1 pièce</option><option>2 pièces</option><option>3 pièces</option><option>4 pièces</option><option>5 pièces</option><option>6 pièces et plus</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="ville">Commune du bien</label><input id="ville" name="ville" placeholder="Enghien-les-Bains"></div>
+        <div class="field"><label for="date">Date souhaitée</label><input id="date" name="date" type="date"></div>
+      </div>
+      <div class="field" data-for="agence"><label for="volume">Volume estimé (états des lieux par mois)</label><input id="volume" name="volume" placeholder="Ex. : 5 à 10"></div>
+      <div class="field"><label for="msg">Précisions (facultatif)</label><textarea id="msg" name="msg" placeholder="Meublé ou non, cave, accès, contraintes d'horaires…"></textarea></div>
+      <button class="btn" type="submit">Envoyer ma demande</button>
+      <p class="hint">Le bouton ouvre votre messagerie avec votre demande déjà rédigée : il ne reste qu'à l'envoyer.</p>
+      <div id="confirm" role="status"></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>[NOM DE VOTRE ACTIVITÉ]</strong>, agent d'état des lieux indépendant, Enghien-les-Bains et Montmorency.</p>
+    <p>Site édité et prestations facturées par MSQUARE, SASU · SIREN 822 029 393 · RCS Pontoise · [Adresse du siège] · TVA intracommunautaire [numéro] · Assurance responsabilité civile professionnelle : [assureur, numéro de contrat]</p>
+    <p>Les informations saisies dans le formulaire servent uniquement à répondre à votre demande et ne sont pas conservées sur ce site.</p>
+  </div>
+</footer>
+
+<script>
+  // Remplacez par votre adresse e-mail professionnelle
+  var DESTINATAIRE = "contact@exemple.fr";
+
+  // Choix du profil
+  document.querySelectorAll(".switch button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.body.setAttribute("data-profil", b.getAttribute("data-set"));
+      document.querySelectorAll(".switch button").forEach(function (o) {
+        o.setAttribute("aria-pressed", o === b ? "true" : "false");
+      });
+    });
+  });
+
+  // Formulaire : ouvre la messagerie avec la demande rédigée
+  document.getElementById("devis").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var f = e.target;
+    var agence = document.body.getAttribute("data-profil") === "agence";
+    var box = document.getElementById("confirm");
+    box.style.display = "block";
+    if (!f.nom.value.trim() || !f.tel.value.trim() || !f.email.value.trim() || (agence && !f.agence.value.trim())) {
+      box.textContent = agence
+        ? "Merci de renseigner le nom de l'agence, votre nom, votre téléphone et votre e-mail."
+        : "Merci de renseigner votre nom, votre téléphone et votre e-mail.";
+      return;
+    }
+    var sujet = "Demande de devis (" + (agence ? "agence" : "propriétaire") + ") : " + f.presta.value + ", " + f.pieces.value;
+    var lignes = [
+      "Profil : " + (agence ? "Agence" : "Propriétaire bailleur")
+    ];
+    if (agence) {
+      lignes.push("Agence : " + f.agence.value);
+    }
+    lignes.push(
+      "Nom : " + f.nom.value,
+      "Téléphone : " + f.tel.value,
+      "E-mail : " + f.email.value,
+      "Prestation : " + f.presta.value,
+      "Nombre de pièces : " + f.pieces.value,
+      "Commune : " + (f.ville.value || "non précisée"),
+      "Date souhaitée : " + (f.date.value || "non précisée")
+    );
+    if (agence) {
+      lignes.push("Volume estimé par mois : " + (f.volume.value || "non précisé"));
+    }
+    lignes.push("", f.msg.value);
+    window.location.href = "mailto:" + DESTINATAIRE +
+      "?subject=" + encodeURIComponent(sujet) +
+      "&body=" + encodeURIComponent(lignes.join("\n"));
+    box.textContent = "Votre messagerie s'ouvre avec la demande prête à envoyer. Si rien ne s'ouvre, écrivez directement à " + DESTINATAIRE + ".";
+  });
+</script>
+</body>
+</html>
